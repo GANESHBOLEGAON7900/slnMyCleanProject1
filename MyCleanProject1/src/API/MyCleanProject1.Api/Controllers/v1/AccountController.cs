@@ -15,6 +15,7 @@ namespace MyCleanProject1.Api.Controllers
         {
             _authenticationService = authenticationService;
         }
+        //AuthenticateAsync
 
         [HttpPost("authenticate")]
         public async Task<ActionResult<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request)
@@ -34,7 +35,10 @@ namespace MyCleanProject1.Api.Controllers
             return Ok(await _authenticationService.RefreshTokenAsync(request));
         }
 
+        //RevokeTokenAsyncsdcsdcsdc
+
         [HttpPost("revoke-token")]
+
         public async Task<IActionResult> RevokeTokenAsync(RevokeTokenRequest request)
         {
             var response = await _authenticationService.RevokeToken(request);
